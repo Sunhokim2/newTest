@@ -2,7 +2,8 @@
 async function login() {
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
-
+    console.log(username)
+    console.log(password)
 
     const response = await fetch('/auth/login', {
         method: 'POST',
@@ -20,8 +21,7 @@ async function login() {
     }
 }
 
-
-// 회원가입 처리
+//회원가입처리
 async function register() {
     const username = document.getElementById("registerUsername").value;
     const password = document.getElementById("registerPassword").value;
@@ -35,9 +35,11 @@ async function register() {
 
 
     if (response.ok) {
-        alert("회원가입 성공! 이제 로그인하세요.");
+        alert("회원가입 성공! 로그인하세요.");
+        console.log("제발");
     } else {
         alert("회원가입 실패. 다시 시도하세요.");
+        console.log("제발23");
     }
 }
 

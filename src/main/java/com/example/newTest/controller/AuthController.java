@@ -29,12 +29,12 @@ public class AuthController {
         userService.saveUser(user);
         return ResponseEntity.ok("User register success!!!");
     }
-//    /** 로그인 처리 **/
-//    @PostMapping("/login")
-//    public ResponseEntity<String> login(@RequestBody User user){
-//        return userService.validateUser(user)
-//                ? ResponseEntity.ok("로그인성공")
-//                : ResponseEntity.status(401).body("실패");
-//    }
+    /** 로그인 처리 **/
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody User user){
+        return userService.validateUser(user)
+                ? ResponseEntity.ok("로그인성공")
+                : ResponseEntity.status(401).body("실패");
+    }
 
 }
